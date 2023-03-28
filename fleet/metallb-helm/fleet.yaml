@@ -2,5 +2,6 @@
 # https://github.com/rancher/fleet-examples/tree/master/multi-cluster/helm-external
 namespace: metallb-system
 helm:
-  chart: https://github.com/metallb/metallb/tree/main/charts/metallb
+  repo: https://github.com/metallb/metallb.git
+  chart: charts/metallb
   version: v0.13.9
