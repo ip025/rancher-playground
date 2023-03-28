@@ -1,0 +1,7 @@
+---
+# https://github.com/rancher/fleet-examples/tree/master/multi-cluster/helm-external
+defaultNamespace: logging-system
+helm:
+  repo: https://grafana.github.io/helm-charts
+  chart: loki-stack
+  version: 2.9.9
