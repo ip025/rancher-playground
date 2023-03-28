@@ -5,3 +5,4 @@ helm:
   repo: https://metallb.github.io/metallb
   chart: metallb
   version: v0.13.9
+  force: true
