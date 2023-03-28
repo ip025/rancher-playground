@@ -4,4 +4,4 @@ defaultNamespace: longhorn-system
 helm:
   repo: https://charts.longhorn.io
   chart: longhorn
-  version: 1.4.1
+  version: 1.4.0
