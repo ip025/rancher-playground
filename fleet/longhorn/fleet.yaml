@@ -1,0 +1,7 @@
+---
+# https://github.com/rancher/fleet-examples/tree/master/multi-cluster/helm-external
+defaultNamespace: longhorn-system
+helm:
+  repo: https://charts.longhorn.io
+  chart: longhorn
+  version: 1.4.1
