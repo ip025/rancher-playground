@@ -7,4 +7,7 @@ helm:
   version: 2.9.9
   valuesFiles:
     - "values.yaml"
-    
+dependsOn:
+  - selector:
+      matchLabels:
+        app: longhorn

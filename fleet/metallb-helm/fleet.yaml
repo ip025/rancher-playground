@@ -1,6 +1,8 @@
 ---
 # https://github.com/rancher/fleet-examples/tree/master/multi-cluster/helm-external
 defaultNamespace: metallb-system
+labels:
+  app: metallb
 helm:
   repo: https://metallb.github.io/metallb
   chart: metallb
