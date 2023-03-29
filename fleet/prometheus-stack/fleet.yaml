@@ -1,13 +1,18 @@
----
-# https://github.com/rancher/fleet-examples/tree/master/multi-cluster/helm-external
 defaultNamespace: cattle-monitoring-system
 helm:
-  repo: https://prometheus-community.github.io/helm-charts
-  chart: kube-prometheus-stack
-  version: 45.8.0
-  valuesFiles:
-  - "values.yaml"
-# dependsOn:
-#   - selector:
-#       matchLabels:
-#         app: longhorn
+  releaseName: rancher-monitoring
+  repo: https://charts.rancher.io
+  chart: rancher-monitoring
+  version: 100.1.2+up19.0.3
+diff:
+  comparePatches:
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: MutatingWebhookConfiguration
+      name: rancher-monitoring-admission
+      operations:
+        - {"op":"remove", "path":"/webhooks/0/failurePolicy"}
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: ValidatingWebhookConfiguration
+      name: rancher-monitoring-admission
+      operations:
+        - {"op":"remove", "path":"/webhooks/0/failurePolicy"}
