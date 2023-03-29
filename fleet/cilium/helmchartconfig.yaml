@@ -1,0 +1,29 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: rke2-cilium
+spec:
+  valuesContent: |-
+    rollOutCiliumPods: true
+    updateStrategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 50%
+    # l7Proxy: false
+    # encryption:
+    #   enabled: true
+    #   type: wireguard
+    prometheus:
+      enabled: false
+      serviceMonitor:
+        enabled: false
+    hubble:
+      enabled: true
+      metrics:
+        enabled: false
+        serviceMonitor:
+          enabled: false
+      relay:
+        enabled: true
+      ui:
+        enabled: true
