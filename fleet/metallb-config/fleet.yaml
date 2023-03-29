@@ -1,3 +1,5 @@
 ---
 # https://github.com/rancher/fleet-examples/blob/master/multi-cluster/manifests
 defaultNamespace: metallb-system
+dependsOn:
+  - metallb-fleet-metallb-helm
