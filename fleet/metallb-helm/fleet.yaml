@@ -6,4 +6,5 @@ helm:
   chart: metallb
   version: v0.13.9
   force: true
-  
+  valuesFiles:
+  - "values.yaml"
