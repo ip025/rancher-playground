@@ -5,3 +5,6 @@ helm:
   repo: https://grafana.github.io/helm-charts
   chart: loki-stack
   version: 2.9.9
+  valuesFiles:
+    - "values.yaml"
+    

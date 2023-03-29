@@ -5,5 +5,7 @@ loki:
     replication_factor: 1
   storage:
     type: 'filesystem'
-  valuesFiles:
-  - "values.yaml"
+  persistence:
+    enabled: true
+    storageClassName: longhorn
+    size: 20Gi
